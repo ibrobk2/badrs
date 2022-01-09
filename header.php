@@ -31,7 +31,7 @@
     <a class="nav-link active" aria-current="page" href="#">Active</a>
   </li> -->
   <li class="nav-item">
-    <a class="nav-link active" href="#" >Dashboard</a>
+    <a class="nav-link active" href="admin_dashboard.php" >Dashboard</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="birth_reg.php" style="color:#fff; font-weight: bold;">New_Birth_Record</a>

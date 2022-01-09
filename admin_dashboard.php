@@ -31,7 +31,7 @@
         <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon rotate-n-0">
                     <i class="fas fa-user"></i>
                 </div>
@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -121,22 +121,43 @@
                 </div>
             </li> --> 
 
-            <!-- Nav Item - Charts -->
+            <!-- Nav Item - Birth Registration -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                <a class="nav-link" href="birth_reg.php">
+                    <i class="fas fa-fw fa-calendar"></i>
+                    <span>Birth Registration</span></a>
             </li>
+
+                   <!-- Nav Item - Death registration -->
+                   <li class="nav-item">
+                    <a class="nav-link" href="death_reg.php">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Death Registration</span></a>
+                </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="birth_record.php">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                    <span>Manage Birth Record</span></a>
             </li>
+
+                <!-- Nav Item - Tables -->
+                <li class="nav-item">
+                    <a class="nav-link" href="death_record.php">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Manage Death Record</span></a>
+                </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
+
+             <!-- Nav Item - Tables -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php" onclick="<?php session_unset();?>">
+                        <i class="fas fa-fw fa-lock"></i>
+                        <span>Logout</span></a>
+                </li>
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -254,11 +275,11 @@
 
                         <!-- Nav Item - Messages -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="index.php" id="messagesDropdown" role="button" onclick="<?php session_unset(); ?>"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <!-- <i class="fas fa-envelope fa-fw"></i>
-                                Counter - Messages
-                                <span class="badge badge-danger badge-counter">7</span> -->
+                                <i class="fas fa-lock fa-fw"></i>
+                                Logout
+                                <!-- <span class="badge badge-danger badge-counter">Logout</span> -->
                             </a>
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -538,7 +559,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <footer class="footer bg-white" style="margin-top: 320px;">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; Department of Software Engineering, Al-Qalam University, Katsina.</span>
