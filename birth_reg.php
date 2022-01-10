@@ -241,7 +241,7 @@ button:hover{
 
             
                 
-                <button class="btn btn-primary form-control" name="register" style="width:70%; font-weight: bold; color: #fff; background: darkgreen; border:none; ouline:none;" id="btn" onmouseover="hover();" onmouseout="mouseout();">Register</button><br>
+                <button class="btn btn-primary form-control" name="birth_register" style="width:70%; font-weight: bold; color: #fff; background: darkgreen; border:none; ouline:none;" id="btn" onmouseover="hover();" onmouseout="mouseout();">Register</button><br>
             </form>
         </div>
     </div>

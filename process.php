@@ -10,25 +10,44 @@
         include_once "errors.php";
 
 
-    if(isset($_POST['register'])){
+    if(isset($_POST['birth_register'])){
         //Variables Declaration
-        $fname = mysqli_real_escape_string($server, $_POST['fname']);
-        $username = mysqli_real_escape_string($server, $_POST['user']);
-        $email = mysqli_real_escape_string($server, $_POST['email']);
-        $password = mysqli_real_escape_string($server, $_POST['pass']);
-        $password2 = mysqli_real_escape_string($server, $_POST['pass2']);
+        $reg_centre = mysqli_real_escape_string($server, $_POST['reg_centre']);
+        $town = mysqli_real_escape_string($server, $_POST['town']);
+        $cert_no = "";
+        $LGA = mysqli_real_escape_string($server, $_POST['LGA']);
+        $state = mysqli_real_escape_string($server, $_POST['state']);
+        $volume = "";
+        $date_of_reg = mysqli_real_escape_string($server, $_POST['date']);
+        $full_name = mysqli_real_escape_string($server, $_POST['full_name']);
+        $sex = mysqli_real_escape_string($server, $_POST['sex']);
+        $date_of_birth = mysqli_real_escape_string($server, $_POST['date']);
+        $place_of_birth = mysqli_real_escape_string($server, $_POST['place_of_birth']);
+        $fathers_name = mysqli_real_escape_string($server, $_POST['fathers_name']);
+        $mothers_name = mysqli_real_escape_string($server, $_POST['mothers_name']);
+        $place_of_issue = mysqli_real_escape_string($server, $_POST['place_of_issue']);
+        $name_of_registrar = "";
+
         
-        // form validation: ensure that the form is correctly filled ...
-        if(empty($fname)){array_push($errors, "Full name is required");}
-        if(empty($username)){array_push($errors, "Username is required");}
-        if(empty($email)){array_push($errors, "e-mail is required");}
-        if(empty($password)){array_push($errors, "Password is required");}
-        if(empty($password2)){array_push($errors, "Confirm Password is required");}
-        if($password!=$password2){
-            array_push($errors, "Passwords Mismatched!");
-        }
+        // Inputs validation: to ensure that the form is correctly filled ...
+        if(empty($reg_centre)){array_push($errors, "Registration Centre Name required");}
+        if(empty($town)){array_push($errors, "Town/Village is required");}
+        if(empty($LGA)){array_push($errors, "L.G.A. is required");}
+        if(empty($date_of_reg)){array_push($errors, "State is required");}
+        if(empty($full_name)){array_push($errors, "Full Name is required");}
+        if(empty($sex)){array_push($errors, "Sex is required");}
+        if(empty($place_of_birth)){array_push($errors, "Place of Birth is required");}
+        if(empty($fathers_name)){array_push($errors, "Father's Name is required");}
+        if(empty($mothers_name)){array_push($errors, "Mother's Name is required");}
+        if(empty($place_of_issue)){array_push($errors, "Place of Issue is required");}
+
+
+
+        // if($password!=$password2){
+        //     array_push($errors, "Passwords Mismatched!");
+        // }
         // To check whether user exist in the database
-        $query = "SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1";
+        $query = "SELECT * FROM birth_certificates WHERE full_name='$full_name' AND date_of_birth='$date_of_birth' LIMIT 1";
         $result = mysqli_query($server, $query);
         $user = mysqli_fetch_assoc($result);
 
